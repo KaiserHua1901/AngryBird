@@ -14,7 +14,6 @@ func _process(delta):
 
 func add_pc():
 	var pc = PC.instantiate()
-	add_child(pc)
 	pc.position = pc_start.position
-
+	add_child(pc)
 

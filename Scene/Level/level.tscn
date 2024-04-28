@@ -14,8 +14,7 @@ texture = ExtResource("1_d8rut")
 
 [node name="PCStart" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(592, 144)
-scale = Vector2(1.2051, 1)
+position = Vector2(394, 428)
 
 [node name="Water" parent="." instance=ExtResource("2_8goxf")]
 z_index = 1

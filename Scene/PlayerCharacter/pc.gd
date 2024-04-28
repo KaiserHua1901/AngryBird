@@ -2,25 +2,39 @@ extends RigidBody2D
 
 enum PC_STATE {READY, DRAG, RELEASE}
 
+const DRAG_lIM_MAX: Vector2 = Vector2(0, 60)
+const DRAG_LIM_MIN: Vector2 = Vector2(-60, 0)
+
+var start:Vector2 = Vector2.ZERO
+var drag_start:Vector2 = Vector2.ZERO
+var dragged_vector: Vector2 = Vector2.ZERO
+var last_dragged_vector: Vector2 = Vector2.ZERO
+
+@onready var label = %Label
+@onready var stretch = %Stretch
+@onready var arrow = %Arrow
+
+
 var state: PC_STATE = PC_STATE.READY
 # The state when pc load in the scene 
 
 func _ready():
-	pass # Replace with function body.
-
-
-
-
+	arrow.hide()
+	start = position
+	# Make the start position to the postition of the PC position
+	
 func _physics_process(delta):
 	update(delta)
-
+	label.text = "%.1f, %.1f" % [dragged_vector.x, dragged_vector.y]
+	
 func set_new_state(new_state: PC_STATE) -> void:
 	state = new_state
 	if state == PC_STATE.RELEASE:
+		arrow.hide()
 		freeze = false 
 	elif state == PC_STATE.DRAG:
-		pass
-
+		drag_start = get_global_mouse_position()
+		arrow.show()
 func detect_release() -> bool: 
 	if state == PC_STATE.DRAG:
 		if Input.is_action_just_released("drag") == true: 
@@ -29,13 +43,43 @@ func detect_release() -> bool:
 			return true
 	return false 
 
-func update_drag() -> void:
+func scale_arrow() -> void:
+	arrow.rotation = (start - position).angle()
+
+
+func play_stretch_sound()-> void:
+	if (last_dragged_vector - dragged_vector).length() > 0:
+		if stretch.playing == false:
+			stretch.play()
+
+
+func get_dragged_vector(gmp: Vector2) -> Vector2:
+	return gmp - drag_start
+
+func drag_in_limit() -> void: 
+	last_dragged_vector = dragged_vector
 	
+	dragged_vector.x = clampf(
+		dragged_vector.x,
+		DRAG_LIM_MIN.x, 
+		DRAG_lIM_MAX.x
+	)
+	dragged_vector.y = clampf(
+		dragged_vector.y,
+		DRAG_LIM_MIN.y, 
+		DRAG_lIM_MAX.y
+	)
+	position = start + dragged_vector
+
+func update_drag() -> void:	
 	if detect_release() == true:
 		return
 	
 	var gmp = get_global_mouse_position()
-	position = gmp
+	dragged_vector = get_dragged_vector(gmp)
+	play_stretch_sound()
+	drag_in_limit()
+	scale_arrow()
 	# jump the mouse position to where the PC at
 
 func update(delta:float) -> void:
