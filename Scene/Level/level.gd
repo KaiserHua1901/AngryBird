@@ -17,3 +17,6 @@ func add_pc():
 	pc.position = pc_start.position
 	add_child(pc)
 
+
+
+
