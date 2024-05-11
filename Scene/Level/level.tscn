@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://8ho68f53m48b"]
+[gd_scene load_steps=4 format=3 uid="uid://8ho68f53m48b"]
 
 [ext_resource type="Texture2D" uid="uid://b41c1o4gxnjjq" path="res://assets/scene/colored_castle.png" id="1_d8rut"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_xo7x8"]
 [ext_resource type="PackedScene" uid="uid://bgxn2o6dll1lg" path="res://Scene/Level/Water.tscn" id="2_8goxf"]
-[ext_resource type="PackedScene" uid="uid://bvr8hgu1qj01m" path="res://Scene/log/log.tscn" id="4_prcvi"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xo7x8")
+metadata/_edit_horizontal_guides_ = [232.0, -120.0]
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(574, 258)
@@ -20,9 +20,4 @@ position = Vector2(106, 285)
 [node name="Water" parent="." instance=ExtResource("2_8goxf")]
 z_index = 1
 position = Vector2(578, 615)
-
-[node name="log" parent="." instance=ExtResource("4_prcvi")]
-position = Vector2(370, 445)
-
-[node name="log2" parent="." instance=ExtResource("4_prcvi")]
-position = Vector2(762, 260)
+scale = Vector2(1, 1.00239)

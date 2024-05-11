@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmrnmq0ume2ug"]
+
+[ext_resource type="Texture2D" uid="uid://dnhenunuh411w" path="res://assets/ui/panel_beige.png" id="1_f63f5"]
+[ext_resource type="Script" path="res://Scene/level_button.gd" id="2_n3svj"]
+[ext_resource type="LabelSettings" uid="uid://cfsdsdt163t1w" path="res://assets/32_shadow.tres" id="2_xeb4y"]
+[ext_resource type="FontFile" uid="uid://ci1f31abvcfhy" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_txv75"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mvh2y"]
+font = ExtResource("3_txv75")
+font_size = 42
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="LevelButton" type="TextureButton"]
+offset_right = 120.0
+offset_bottom = 120.0
+pivot_offset = Vector2(60, 60)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_f63f5")
+stretch_mode = 0
+script = ExtResource("2_n3svj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -73.5
+offset_right = 48.5
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3
+"
+label_settings = ExtResource("2_xeb4y")
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1000"
+label_settings = SubResource("LabelSettings_mvh2y")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

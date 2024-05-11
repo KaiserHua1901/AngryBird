@@ -21,7 +21,6 @@ var is_contact: int = 0
 @onready var lauch_sound = %LauchSound
 @onready var hit = $hit
 
-
 var state: PC_STATE = PC_STATE.READY
 # The state when pc load in the scene 
 

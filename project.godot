@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="AngryBird"
-run/main_scene="res://Scene/Level/level.tscn"
+run/main_scene="res://Scene/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalManager="*res://Autoload/SignalManager.gd"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
 
 [display]
 

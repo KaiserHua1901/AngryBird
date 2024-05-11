@@ -8,17 +8,13 @@
 [ext_resource type="AudioStream" uid="uid://bfq118xgkobis" path="res://assets/audio/kick_wood.ogg" id="6_v4ulh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p56ga"]
-friction = 0.5
 rough = true
-bounce = 1.0
-absorbent = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4e70"]
 radius = 32.0
 
 [node name="PC" type="RigidBody2D"]
 input_pickable = true
-mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_p56ga")
 freeze = true
 max_contacts_reported = 1

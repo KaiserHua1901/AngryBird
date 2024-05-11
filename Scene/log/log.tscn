@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvr8hgu1qj01m"]
 
-[ext_resource type="Script" path="res://Scene/log.gd" id="1_ggg5r"]
+[ext_resource type="Script" path="res://scripts/log.gd" id="1_4yf4l"]
 [ext_resource type="Texture2D" uid="uid://bowrrr3svfdre" path="res://assets/env/elementWood004.png" id="1_hv1nf"]
 [ext_resource type="Texture2D" uid="uid://ckqv0qandrieg" path="res://assets/env/elementWood015.png" id="2_5k0fa"]
 [ext_resource type="AudioStream" uid="uid://b72wm4bq7gyu6" path="res://assets/audio/vanish.wav" id="3_emqvu"]
@@ -42,13 +42,15 @@ _data = {
 }
 
 [node name="log" type="StaticBody2D"]
+position = Vector2(-19, -1)
 scale = Vector2(0.6, 0.6)
-script = ExtResource("1_ggg5r")
+script = ExtResource("1_4yf4l")
+metadata/_edit_group_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(-121, -65)
+position = Vector2(-66.6667, -65)
 texture = ExtResource("1_hv1nf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
@@ -57,13 +59,13 @@ texture = ExtResource("1_hv1nf")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
-position = Vector2(7, 4)
-scale = Vector2(1.53636, 1)
+position = Vector2(35.4998, 4)
+scale = Vector2(1.27727, 1)
 texture = ExtResource("2_5k0fa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-61, -15)
-polygon = PackedVector2Array(-94, -84, -101, 51, 230, 53, 234, -86, 166, -16, -25, -17)
+position = Vector2(-1.66666, -13.3333)
+polygon = PackedVector2Array(-94, -84, -101, 51, 175, 53.3333, 173.333, -81.6667, 113.333, -20, -25, -17)
 
 [node name="Vanish" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_emqvu")
