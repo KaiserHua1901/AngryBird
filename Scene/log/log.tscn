@@ -41,7 +41,7 @@ _data = {
 "vanish": SubResource("Animation_4jasq")
 }
 
-[node name="log" type="StaticBody2D"]
+[node name="log" type="StaticBody2D" groups=["log"]]
 position = Vector2(-19, -1)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_4yf4l")
