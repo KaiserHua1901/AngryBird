@@ -13,7 +13,7 @@ func _ready():
 
 
 func on_attempt_made() -> void:
-	attempt += 1
+ 	attempt += 1
 	SignalManager.on_score_update.emit(attempt)
 
 

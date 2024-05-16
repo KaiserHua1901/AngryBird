@@ -6,16 +6,21 @@
     "configurations": [
         
 
-        
-
+        {
+            "name": "GDScript: Launch Pinned File",
+            "type": "godot",
+            "request": "launch",
+            "scene": "pinned",
+            "project": "${workspaceFolder}",
+            "additional_options": ""
+        },
         {
             "name": "GDScript: Launch Project",
             "type": "godot",
             "request": "launch",
             "project": "${workspaceFolder}",
             "port": 6007,
-            "debugServer": 6008,
-            "address": "127.0.0.1",
+            "debugServer": 6006,
             "debug_collisions": false,
             "debug_paths": false,
             "debug_navigation": false,

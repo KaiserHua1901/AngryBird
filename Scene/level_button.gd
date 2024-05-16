@@ -17,7 +17,7 @@ var level_scene: PackedScene
 
 
 func _ready():
-	level_scene = load("res://Scene/Level/level%s.tscn" %Level_Number)
+	level_scene = load("res://scripts/Level/level%s.tscn" %Level_Number)
 	var highest_score = ScoreManager.get_highest_score(str(Level_Number))
 	score_label.text = str(highest_score)
 	level_Label.text = str(Level_Number)
