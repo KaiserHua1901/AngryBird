@@ -6,6 +6,7 @@ const PC = preload("res://Scene/PlayerCharacter/pc.tscn")
 var main_menu = preload("res://Scene/main_menu.tscn")
 
 func _ready():
+	print("test")
 	add_pc()
 	SignalManager.on_pc_died.connect(add_pc)
 

@@ -7,6 +7,3 @@
 
 [node name="log" parent="." index="3" instance=ExtResource("2_dbtlq")]
 position = Vector2(254, 434)
-
-[node name="log2" parent="." index="4" instance=ExtResource("2_dbtlq")]
-position = Vector2(778, 285)

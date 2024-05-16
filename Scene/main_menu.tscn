@@ -75,4 +75,3 @@ label_settings = SubResource("LabelSettings_gkq2f")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_o6a2d")
 volume_db = -0.31
-autoplay = true
