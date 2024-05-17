@@ -20,7 +20,7 @@
             "request": "launch",
             "project": "${workspaceFolder}",
             "port": 6007,
-            "debugServer": 6006,
+            "debugServer": 6008,
             "debug_collisions": false,
             "debug_paths": false,
             "debug_navigation": false,
