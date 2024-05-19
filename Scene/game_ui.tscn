@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm6a5se0uaw3p"]
+
+[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_07q8m"]
+[ext_resource type="LabelSettings" uid="uid://dy8n07xqw66ho" path="res://assets/32_shadow_Darker.tres" id="1_cmgfa"]
+[ext_resource type="LabelSettings" uid="uid://bo3w86sr0fntg" path="res://assets/72_shadow_Orange.tres" id="2_susoa"]
+[ext_resource type="FontFile" uid="uid://ci1f31abvcfhy" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_qum3t"]
+[ext_resource type="AudioStream" uid="uid://cpp22coffxrdf" path="res://assets/audio/jazzyfrenchy.mp3" id="4_1yroh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvjb8"]
+font = ExtResource("3_qum3t")
+font_size = 48
+font_color = Color(0.894118, 0.47451, 0.152941, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_07q8m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelNumber" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level 10"
+label_settings = ExtResource("1_cmgfa")
+
+[node name="Attempts" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Attempts 10"
+label_settings = ExtResource("1_cmgfa")
+
+[node name="GameCompleted" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/GameCompleted"]
+layout_mode = 2
+text = "Game Completed"
+label_settings = ExtResource("2_susoa")
+
+[node name="Label2" type="Label" parent="MarginContainer/GameCompleted"]
+layout_mode = 2
+text = "press Space to Continue"
+label_settings = SubResource("LabelSettings_lvjb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameCompletedAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_1yroh")
+volume_db = -0.59
